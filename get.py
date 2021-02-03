@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 # get all files from given date through today
-# get.py 20200101
+# get.py
 
 import os
 import requests
@@ -10,7 +10,11 @@ from datetime import datetime, timedelta
 
 u = "http://regsho.finra.org/CNMSshvol{}.txt"
 
-d_string = sys.argv[1]
+# only goes back to 20180801, everything else is 404
+# if someone knows of a filename change or something
+# around that time, let me know and i can fix this up
+# to get older stuff
+d_string = "20180801"
 
 d = datetime.strptime(d_string, '%Y%m%d')
 
